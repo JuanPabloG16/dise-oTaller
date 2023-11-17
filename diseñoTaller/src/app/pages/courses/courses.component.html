@@ -1,0 +1,7 @@
+<app-main-layout>
+    <div class="course-grid"><a (click)="goToCourses()" class="back-button" class="back-button">← Mis cursos</a></div>
+    
+    <div class="course-grid">
+        <app-course-card *ngFor="let course of courses" [course]="course" [showRegisterBtn]="false"></app-course-card>
+    </div>
+</app-main-layout>

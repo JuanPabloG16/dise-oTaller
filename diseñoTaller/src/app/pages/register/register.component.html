@@ -1,0 +1,33 @@
+<app-main-layout>
+    <div class="course-grid"><a (click)="goToCourses()" class="back-button">← Registrarse al curso de {{ course?.title }}</a></div>
+
+    <div class="course-register">
+        <div class="course-single register" [ngStyle]="{'border-color': course?.color, 'box-shadow': '0px 0px 10px ' + course?.color, 'color': course?.color}">
+            <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                <div class="course-details title">
+                    <p>Curso: <span>{{course?.title}}</span></p>
+                </div>
+
+                <div class="course-details">
+                    <label for="firstName">Nombre:</label>
+                    <input type="text" formControlName="firstName" id="firstName" required>
+                    
+                    <label for="lastName">Apellido:</label>
+                    <input type="text" formControlName="lastName" id="lastName" required>
+                </div>
+
+                <div class="course-details">
+                    <label for="email">Email:</label>
+                    <input type="email" formControlName="email" id="email" required>
+
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" formControlName="phone" id="phone" required>
+                </div>
+
+                <div class="course-details button-container">
+                    <button type="submit" [disabled]="!registerForm.valid" class="register-button" [ngStyle]="{'background-color': course?.color}">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-main-layout>

@@ -1,0 +1,5 @@
+<app-main-layout>
+    <div class="course-grid">
+        <app-course-card *ngFor="let course of courses" [course]="course" [showRegisterBtn]="true" (register)="goToRegister(course)"></app-course-card>
+    </div>
+</app-main-layout>

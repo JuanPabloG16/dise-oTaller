@@ -1,0 +1,12 @@
+<div class="course-card card" [ngStyle]="{'border-color': course.color, 'box-shadow': '0px 0px 10px ' + course.color}">
+    <h3 [ngStyle]="{'color': course.color}">{{ course.title }}</h3>
+    <p>{{ course.description }}</p>
+    <div *ngIf="showRegisterBtn">
+        <button (click)="onRegister(course)" class="register-button" [ngStyle]="{'background-color': course.color}">Registrarse</button>
+    </div>
+    <div *ngIf="!showRegisterBtn" class="progress">
+        <span for="progress" [ngStyle]="{'color': course.color}">Avance: {{ progress }}%</span>
+        <progress id="progress" value="{{ progress }}" max="100" > {{ progress }}% </progress>
+    </div>
+</div>
+  
